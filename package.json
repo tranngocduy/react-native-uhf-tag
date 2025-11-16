@@ -1,6 +1,6 @@
 {
   "name": "react-native-uhf-tag",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "Modern React Native library for UHF RFID tag reading with Turbo Module support for Chainway R6 and compatible devices",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

@@ -1,16 +1,22 @@
+require "json"
+
+package = JSON.parse(File.read(File.join(__dir__, "package.json")))
+
+folly_compiler_flags = '-DFOLLY_NO_CONFIG -DFOLLY_MOBILE=1 -DFOLLY_USE_LIBCPP=1 -Wno-comma -Wno-shorten-64-to-32'
+
 Pod::Spec.new do |s|
   s.name         = "react-native-uhf-tag"
-  s.version      = "1.2.0"
-  s.summary      = "Modern React Native library for UHF RFID tag reading with Turbo Module support"
+  s.version      = package["version"]
+  s.summary      = package["description"]
   s.description  = <<-DESC
                   React Native library for UHF RFID tag reading with Chainway R6 and compatible devices.
                   Built with Turbo Module architecture for improved performance.
                   DESC
-  s.homepage     = "https://github.com/yourusername/react-native-uhf-tag"
-  s.license      = "MIT"
-  s.author       = { "Your Name" => "your.email@example.com" }
+  s.homepage     = package["homepage"]
+  s.license      = package["license"]
+  s.author       = { "Your Name" => "tranngocduy@gmail.com" }
   s.platforms    = { :ios => "11.0" }
-  s.source       = { :git => "https://github.com/yourusername/react-native-uhf-tag.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/tranngocduy/react-native-uhf-tag.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,mm,swift}"
   
